@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "old-allgood/version"
-require_relative "old-allgood/engine"
-require_relative "old-allgood/configuration"
+require_relative "allgood/version"
+require_relative "allgood/engine"
+require_relative "allgood/configuration"
 
 module Allgood
   class Error < StandardError; end

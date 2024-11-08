@@ -1,5 +1,5 @@
 module Allgood
   class BaseController < ApplicationController
-    layout 'old-allgood/application'
+    layout 'allgood/application'
   end
 end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "lib/old-allgood/version"
+require_relative "lib/allgood/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "old-allgood"
+  spec.name = "allgood"
   spec.version = Allgood::VERSION
   spec.authors = ["rameerez"]
   spec.email = ["rubygems@rameerez.com"]
