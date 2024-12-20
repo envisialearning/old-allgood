@@ -1,6 +1,5 @@
 # ✅ Allgood - Rails gem for health checks
-
-[![Gem Version](https://badge.fury.io/rb/allgood.svg)](https://badge.fury.io/rb/allgood)
+Modified version of  the allgood gem, to work with older versions of rails. 
 
 Add quick, simple, and beautiful health checks to your Rails application via a `/healthcheck` page.
 
