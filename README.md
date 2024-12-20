@@ -1,6 +1,8 @@
 # ✅ Allgood - Rails gem for health checks
 Modified version of  the allgood gem, to work with older versions of rails. 
 
+The original is from:  https://github.com/rameerez/allgood. 
+
 Add quick, simple, and beautiful health checks to your Rails application via a `/healthcheck` page.
 
 ![Example dashboard of the Allgood health check page](allgood.jpeg)
@@ -191,10 +193,4 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 
-## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/rameerez/allgood. Our code of conduct is: just be nice and make your mom proud of what you do and post online.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
