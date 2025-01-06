@@ -1,15 +1,15 @@
 # ✅ Allgood - Rails gem for health checks
-Modified version of  the allgood gem, to work with older versions of rails. 
 
-The original is from:  https://github.com/rameerez/allgood. 
 
-Add quick, simple, and beautiful health checks to your Rails application via a `/healthcheck` page.
+Add quick, simple, and beautiful health checks to your Rails application via a `/healthcheck` page. removed some functionality that prevented 4.2 compatability.
+
+Use it for smoke testing, to make sure your app is healthy and functioning as expected.
 
 ![Example dashboard of the Allgood health check page](allgood.jpeg)
 
 ## How it works
 
-`allgood` allows you to define custom health checks (as in: can the Rails app connect to the DB, are there any new users in the past 24 hours, are they actually using the app, etc.) in a very intuitive way that reads just like English.
+`allgood` allows you to define custom health checks / smoke tests (as in: can the Rails app connect to the DB, are there any new users in the past 24 hours, are they actually using the app, etc.) in a very intuitive way that reads just like English.
 
 It provides a `/healthcheck` endpoint that displays the results in a beautiful page.
 
@@ -181,6 +181,26 @@ check "Complex check",
 end
 ```
 
+### Rate Limiting Expensive Checks
+
+For expensive operations (like testing paid APIs), you can limit how often checks run:
+
+```ruby
+# Run expensive checks a limited number of times
+check "OpenAI is responding with a valid LLM message", run: "2 times per day" do
+  # expensive API call
+end
+
+check "Analytics can be processed", run: "4 times per hour" do
+  # expensive operation
+end
+```
+
+Important notes:
+- Rate limits reset at the start of each period (hour/day)
+- The error state persists between rate-limited runs
+- Rate-limited checks show clear feedback about remaining runs and next reset time
+
 When a check is skipped due to its conditions not being met, it will appear in the healthcheck page with a skip emoji (⏭️) and a clear explanation of why it was skipped.
 
 ![Example dashboard of the Allgood health check page with skipped checks](allgood_skipped.webp)
@@ -193,4 +213,10 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 
+## Original Gem
 
+https://github.com/rameerez/allgood. 
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
